@@ -1,2 +1,2 @@
 # ads
-Advanced Data Structures
+Advanced Data Structures discipline artifacts repository
