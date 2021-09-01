@@ -12,88 +12,66 @@
 int sstack[MAX];
 int top;
 
-void create()
-{
+void create() {
   top = 0;
 }
 
-int isFull()
-{
+int isFull() {
   return (top == MAX);
 }
 
-int isEmpty()
-{
+int isEmpty() {
   return (top == 0);
 }
 
-int push(int x)
-{
-  if (isFull())
-  {
+int push(int x ) {
+  if (isFull()) {
     return 0;
-  }
-  else
-  {
+  } else {
     sstack[top++] = x;
     return 1;
   }
 }
 
-int pop()
-{
-  if (isEmpty())
-  {
+int pop() {
+  if (isEmpty()) {
     return 0;
-  }
-  else
-  {
+  } else {
     return sstack[--top];
   }
 }
 
-int search(int value)
-{
+int search(int value) {
   //code here
   return 0;
 }
 
-int main()
-{
+int main() {
   int option = 0, value = 0;
   char keep = 'y';
 
   create();
 
-  do
-  {
+  do {
     printf("\n# Stack Demo Menu #\n");
     printf("\n1. Push\n2. Pop\n3. Exit\n\nChoose an option: ");
     scanf("%i", &option);
 
-    switch (option)
-    {
+    switch (option) {
     case 1:
       printf("\nEnter a integer number: ");
       scanf("%i", &value);
-      if (push(value))
-      {
+      if (push(value)) {
         printf("* Push ok.");
-      }
-      else
-      {
+      } else {
         printf("* Push error.");
       }
-
       break;
     case 2:
       value = pop();
-      if (value != 0)
-      {
+      if (value != 0) {
         printf("* Pop ok.");
-      }
-      else
-      {
+      } else {
         printf("* Pop error.");
       }
       break;
