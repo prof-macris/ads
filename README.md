@@ -1,2 +1,4 @@
 # ads
-Advanced Data Structures discipline artifacts repository
+To students: repository for Advanced Data Structures classes
+
+*Other source codes in our exercises ;)
