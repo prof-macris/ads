@@ -33,6 +33,7 @@ void enqueue(queue *q, char x)
 }
 
 char dequeue(queue *q) {
+  //one step ahead version
   int i;
   char x = q->item[0];
   for (i = 0; i < q->rear; i++) {
