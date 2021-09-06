@@ -43,6 +43,7 @@ int pop() {
 
 int search(int value) {
   //code here
+  printf("\n* Maybe a homework?");
   return 0;
 }
 
@@ -54,33 +55,36 @@ int main() {
 
   do {
     printf("\n# Stack Demo Menu #\n");
-    printf("\n1. Push\n2. Pop\n3. Exit\n\nChoose an option: ");
+    printf("\n1. Push\n2. Pop\n3. Search\n4. Exit\n\nChoose an option: ");
     scanf("%i", &option);
 
     switch (option) {
-    case 1:
-      printf("\nEnter a integer number: ");
-      scanf("%i", &value);
-      if (push(value)) {
-        printf("* Push ok.");
-      } else {
-        printf("* Push error.");
+      case 1:
+        printf("\nEnter a integer number: ");
+        scanf("%i", &value);
+        if (push(value)) {
+          printf("* Push %i ok.", value);
+        } else {
+          printf("* Push error.");
+        }
+        break;
+      case 2:
+        value = pop();
+        if (value != 0) {
+          printf("* Pop %i ok.", value);
+        } else {
+          printf("* Pop error.");
+        }
+        break;
+      case 3:
+        search(0);
+        break;
+      case 4:
+        exit(1);
+      default:
+        printf("* Invalid option");
+        break;
       }
-      break;
-    case 2:
-      value = pop();
-      if (value != 0) {
-        printf("* Pop ok.");
-      } else {
-        printf("* Pop error.");
-      }
-      break;
-    case 3:
-      exit(1);
-    default:
-      printf("* Invalid option");
-      break;
-    }
     printf("\n\nContinue ? (y/n): ");
     scanf(" %c", &keep);
   } while (keep == 'y');
