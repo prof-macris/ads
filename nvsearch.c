@@ -10,42 +10,46 @@
 
 int array[MAX];
 
-void initialize()
-{
+void initialize() {
   int count;
-  for (count = 0; count <= (MAX * 0.20); count++)
-  {
+  for (count = 0; count <= (MAX * 0.20); count++) {
     array[count] = (rand() % 1000) + 1;
-
-    //uncomment line below if need some help
-    //printf("%i ", array[count]);
   }
 }
-int search(int val)
-{
+
+void report() {
+  int count;
+  for (count = 0; count <= MAX; count++) {
+    if (array[count] == 0) {
+      break;
+    }
+    printf("%i ", array[count]);
+  }
+}
+
+int search(int val) {
   int count, res = 0;
-  for (count = 0; count < MAX; count++)
-  {
-    if (array[count] == val && array[count] != 0)
-    {
+  for (count = 0; count < MAX; count++) {
+    if ((array[count] == val) && (array[count] != 0)) {
       res = 1;
     }
   }
   return res;
 }
 
-int main()
-{
+int main() {
   int value = 0;
   char keep = 'y';
 
   initialize();
 
-  do
-  {
+  do {
     system("cls");
-    printf("\n# Naive Search Demo #\n");
 
+    //uncomment line below if need some help
+    //report();
+
+    printf("\n# Naive Search Demo #\n");
     printf("\nEnter a integer number for search: ");
     scanf("%i", &value);
 
